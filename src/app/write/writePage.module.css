@@ -1,4 +1,8 @@
-.container {}
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
 
 .editor {
     display: flex;
@@ -7,6 +11,24 @@
     position: relative;
 }
 
+.select{
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    margin-left: 50px;
+    width: max-content;
+    background-color: var(--bg);
+    border-radius: 10px;
+    color: var(--textColor);
+    font-weight: 600;
+    border-color: var(--textColor);
+    font-family: Arial;
+  }
+
+  .select:hover{
+    border-color: orangered;
+    transition: 1.5s;
+  }
+  
 .button,
 .addButton {
     width: 36px;
@@ -41,6 +63,7 @@
     border: none;
     outline: none;
     background-color: transparent;
+    color: var(--textColor)
 }
 
 .input::placeholder{

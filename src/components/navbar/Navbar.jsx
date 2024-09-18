@@ -27,7 +27,7 @@ const Navbar = () => {
         <FaGithub size={25} />
         </a>
       </div>
-      <div className={styles.logo}>Blog Hub</div>
+      <div className={styles.logo}><a href="/">Blog Hub</a></div>
       <div className={styles.links}>
         <ThemeToggle />
         <Link href="/" className={styles.link}>Homepage</Link>
