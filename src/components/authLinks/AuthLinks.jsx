@@ -6,21 +6,24 @@ import { signOut, useSession } from "next-auth/react";
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
-
   const { status } = useSession();
+
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
 
   return (
     <>
       {status === "unauthenticated" ? (
-        <Link href="/login" className={styles.link}>
+        <Link href="/login" className={styles.link} onClick={handleLinkClick}>
           Login
         </Link>
       ) : (
         <>
-          <Link href="/write" className={styles.link}>
+          <Link href="/write" className={styles.link} onClick={handleLinkClick}>
             Write
           </Link>
-          <span className={styles.link} onClick={signOut}>
+          <span className={styles.link} onClick={() => { signOut(); handleLinkClick(); }}>
             Logout
           </span>
         </>
@@ -32,15 +35,15 @@ const AuthLinks = () => {
       </div>
       {open && (
         <div className={styles.responsiveMenu}>
-          <Link href="/">Homepage</Link>
-          <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
-          {status === "notauthenticated" ? (
-            <Link href="/login">Login</Link>
+          <Link href="/" onClick={handleLinkClick}>Homepage</Link>
+          <Link href="/" onClick={handleLinkClick}>About</Link>
+          <Link href="/" onClick={handleLinkClick}>Contact</Link>
+          {status === "unauthenticated" ? (
+            <Link href="/login" onClick={handleLinkClick}>Login</Link>
           ) : (
             <>
-              <Link href="/write">Write</Link>
-              <span className={styles.link}>Logout</span>
+              <Link href="/write" onClick={handleLinkClick}>Write</Link>
+              <span className={styles.link} onClick={() => { signOut(); handleLinkClick(); }}>Logout</span>
             </>
           )}
         </div>

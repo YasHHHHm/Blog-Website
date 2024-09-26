@@ -1,0 +1,160 @@
+.description{
+  margin-top: 30px ;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.heading{
+  font-size: 70px;
+}
+
+.instructions{
+  margin-left: 20px;
+  color: var(--softTextColor);
+  font-size: 22px;
+  padding-top: 10px;
+  gap: 10px;
+}
+
+.submission{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonDown{
+  height: 50px;
+  width: 150px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--softTextColor);
+  background-color: var(--softBg);
+  border: none;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.buttonDown:hover{
+  background-color: var(--buttonhov);
+  transition: 1.5s;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-shadow: var(--boxShadow);
+  }
+  
+  .form {
+    max-width: 600px;
+    width: 100%;
+    background: var(--softBg);
+    padding: 25px 25px 30px;
+    border-radius: 8px;
+    box-shadow: var(--boxShadow);
+    color: var(--softTextColor);
+    margin: 25px;
+  }
+  
+  .form h2 {
+    font-size: 30px;
+    text-align: center;
+    color: var(--softTextColor);  
+  }
+  
+  .inputBox {
+    margin-top: 20px;
+    color: var(--textColor);
+  }
+  
+  .inputBox input,
+  .inputBox textarea {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 3px solid #878787;
+    outline: none;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 8px;
+  }
+  
+  .inputBox textarea {
+    height: 200px;
+    resize: none;
+  }
+  
+  .button {
+    font-weight: bold;
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 25px;
+    color: rgb(54, 54, 54);
+  }
+
+  .button:hover{
+    background:#959595;
+    transition: 2s;
+  }
+  
+
+  @media screen and (max-width:1280px) {
+
+    .heading {
+        font-size: 72px;
+    }
+    .instructions{
+      font-size: 20px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+
+    .heading {
+        font-size: 64px;
+    }
+    .instructions{
+      font-size: 19px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .heading{
+        font-size: 48px;
+    }
+    .instructions{
+      font-size: 16px;
+      margin-left: 0;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .heading{
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width:420px){
+  .inputBox textarea{
+    height: 120px;
+  }
+  .form label{
+    font-size: 15px;
+  }
+  .inputBox input{
+    height: 25px;
+  }
+}

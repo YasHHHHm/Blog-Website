@@ -14,16 +14,16 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.social}>
-        <a href="/"> 
+        <a href="https://www.facebook.com/yash.mehra.1257/"> 
         <FaFacebookF size={25} />
         </a>
-        <a href="/"> 
+        <a href="https://www.instagram.com/_.yashmehra._/"> 
         <FiInstagram size={25} />
         </a>
-        <a href="/"> 
+        <a href="https://x.com/Mehra_ji_"> 
         <RiTwitterXLine size={25} />
         </a>
-        <a href="/"> 
+        <a href="https://github.com/YasHHHHm"> 
         <FaGithub size={25} />
         </a>
       </div>
@@ -31,8 +31,8 @@ const Navbar = () => {
       <div className={styles.links}>
         <ThemeToggle />
         <Link href="/" className={styles.link}>Homepage</Link>
-        <Link href="/" className={styles.link}>Contact</Link>
-        <Link href="/" className={styles.link}>About</Link>
+        <Link href="/contact" className={styles.link}>Contact</Link>
+        <Link href="/about" className={styles.link}>About</Link>
         <AuthLinks />
       </div>
     </div>

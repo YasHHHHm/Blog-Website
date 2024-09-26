@@ -17,16 +17,23 @@
 .input{
     padding: 20px;
     width: 100%;
+    resize: none;
+    border-radius: 5px;
 }
 
 .button{
     padding: 16px 20px;
-    background-color: teal;
-    color: white;
+    background-color: var(--softBg);
+    color: rgb(115, 114, 114);
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+}
+
+.button:hover{
+    background-color: var(--buttonhov);
+    transition: 1s;
 }
 
 .comment{

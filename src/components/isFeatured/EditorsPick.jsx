@@ -1,13 +1,15 @@
 import { PrismaClient } from '@prisma/client';
-import styles from './menuposts.module.css';
+import Card from '../card/Card';
+import styles from './editorpick.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const prisma = new PrismaClient();
+
 const getCategoryStyle = (categoryTitle) => {
   switch (categoryTitle) {
     case 'travel':
-      return styles.travel;
+      return styles.travel; 
     case 'coding':
       return styles.coding; 
     case 'fashion':
@@ -21,9 +23,11 @@ const getCategoryStyle = (categoryTitle) => {
   }
 };
 
-const MenuPosts = async ({ limit = 4, withImage = true }) => {
+const EditorsPick = async ({ limit = 4, withImage = true }) => {
   const posts = await prisma.post.findMany({
-    orderBy: { views: 'desc' },
+    where: {
+      isFeatured: true, 
+    },
     include: { cat: true, user: true },
     take: limit,
   });
@@ -35,16 +39,18 @@ const MenuPosts = async ({ limit = 4, withImage = true }) => {
           <Link href={`/posts/${post.slug}`} className={styles.item}>
             {withImage && post.img && (
               <div className={styles.imageContainer}>
-                <Image src={post.img} alt="" fill className={styles.image} />
+                <Image src={post.img} alt={post.title} fill className={styles.image} />
               </div>
             )}
             <div className={styles.textContainer}>
-              <span className={`${styles.category} ${getCategoryStyle(post.cat.title)}`}>
+            <span className={`${styles.category} ${getCategoryStyle(post.cat.title)}`}>
                 {post.cat.title}
               </span>
               <h3 className={styles.postTitle}>{post.title}</h3>
               <div className={styles.detail}>
-                <span className={styles.username}>{post.user.name} - </span>
+                <span className={styles.username}>
+                  {post.user.name} - 
+                </span>
                 <span className={styles.date}>
                   {new Date(post.createdAt).toISOString().substring(0, 10)}
                 </span>
@@ -57,4 +63,4 @@ const MenuPosts = async ({ limit = 4, withImage = true }) => {
   );
 };
 
-export default MenuPosts;
+export default EditorsPick;

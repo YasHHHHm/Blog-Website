@@ -26,19 +26,35 @@ a {
     --bg: #161617;
     --textColor: #ddd;
     --softBg: rgb(27, 27, 27);
-    --softTextXolor: #a6a6a6;
+    --softTextColor: #a6a6a6;
     --linkcolor: gray;
     --footerhover: white;
+    --boxshadow: 0px -25px 20px -20px rgb(59, 59, 59), 25px 0 20px -20px rgb(59, 59, 59), 0px 25px 20px -20px rgb(59, 59, 59), -25px 0 20px -20px rgb(59, 59, 59);
+    --stylehov: #2b658431;
+    --fashionhov: #985d8b31;
+    --codinghov: #3a31a231;
+    --culturehov: #aa743145;
+    --foodhov: #59815a33;
+    --travelhov: #b7563e36;
+    --buttonhov: #363637;
 
 }
 
 .light {
     --bg: white;
     --textColor: black;
-    --softBg: #f0f0f0;
+    --softBg: #dbd7d7;
     --softTextColor: #626262;
     --linkcolor: #898787;
     --footerhover:rgb(52, 51, 51);
+    --boxshadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45), 25px 0 20px -20px rgba(0, 0, 0, 0.45), 0px 25px 20px -20px rgba(0, 0, 0, 0.45), -25px 0 20px -20px rgba(0, 0, 0, 0.45);
+    --stylehov: #57c4ff67;
+    --fashionhov: #da85c872;
+    --codinghov: #5547ea62;
+    --culturehov: #ffb04f75;
+    --foodhov: #7fb8817a;
+    --travelhov: #ff795772;
+    --buttonhov: #faf6f6;
 }
 
 .container {

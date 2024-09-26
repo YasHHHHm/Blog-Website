@@ -9,6 +9,7 @@
     flex: 1;
     height: 350px;
     position: relative;
+    box-shadow: var(--boxshadow)
   }
   
   .image {

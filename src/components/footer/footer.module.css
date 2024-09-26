@@ -52,10 +52,6 @@
 .listTitle{
     font-weight: bold;
 }
-.list:hover{
-    color: var(--footerhover);
-    transition: 1s;
-}
 
 
 @media screen and (max-width:1024px) {

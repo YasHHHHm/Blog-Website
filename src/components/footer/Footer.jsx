@@ -18,16 +18,16 @@ const Footer = () => {
           Blog Hub is an interactive blogging website where user can write, discover and discuss blogs. It offer various genres of topics for the user to choose from ranging from fashion, cultures and coding etc. Discover all new features of Bog Hub and don't fprget to write a blog ;) 
         </p>
         <div className={styles.icon}>
-        <a href="/"> 
+        <a href="https://www.facebook.com/yash.mehra.1257/"> 
         <FaFacebookF size={18} />
         </a>
-        <a href="/"> 
+        <a href="https://www.instagram.com/_.yashmehra._/"> 
         <FiInstagram size={18} />
         </a>
-        <a href="/"> 
+        <a href="https://x.com/Mehra_ji_"> 
         <RiTwitterXLine size={18} />
         </a>
-        <a href="/"> 
+        <a href="https://github.com/YasHHHHm"> 
         <FaGithub size={18} />
         </a>
         </div>
@@ -35,24 +35,24 @@ const Footer = () => {
       <div className={styles.links}>
         <div className={styles.list}>
           <span className={styles.listTitle}>Links</span>
-          <Link href="/">Homepage</Link>
-          <Link href="/">Blog</Link>
-          <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
+          <Link classname={styles.link} href="/">Homepage</Link>
+          <Link classname={styles.link} href="/">Blog</Link>
+          <Link classname={styles.link} href="/about">About</Link>
+          <Link classname={styles.link} href="/contact">Contact</Link>
         </div>
         <div className={styles.list}>
           <span className={styles.listTitle}>Topics</span>
-          <Link href="/">Style</Link>
-          <Link href="/">Fashion</Link>
-          <Link href="/">Coding</Link>
-          <Link href="/">Travel</Link>
+          <Link classname={styles.link} href="/blog?cat=style">Style</Link>
+          <Link classname={styles.link} href="/blog?cat=fashion">Fashion</Link>
+          <Link classname={styles.link} href="/blog?cat=coding">Coding</Link>
+          <Link classname={styles.link} href="/blog?cat=travel">Travel</Link>
         </div>
         <div className={styles.list}>
           <span className={styles.listTitle}>Social</span>
-          <Link href="/">Facebook</Link>
-          <Link href="/">Instagram</Link>
-          <Link href="/">TikTok</Link>
-          <Link href="/">Youtube</Link>
+          <Link classname={styles.link} href="https://www.facebook.com/yash.mehra.1257/">Facebook</Link>
+          <Link classname={styles.link} href="https://www.instagram.com/_.yashmehra._/">Instagram</Link>
+          <Link classname={styles.link} href="https://x.com/Mehra_ji_">Twitter</Link>
+          <Link classname={styles.link} href="https://github.com/YasHHHHm">Github</Link>
         </div>
       </div>
     </div>

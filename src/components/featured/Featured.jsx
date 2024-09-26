@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./featured.module.css";
 import Image from "next/image";
-
+import Link from "next/link";
 
 const Featured = () => {
   return (
@@ -11,17 +11,20 @@ const Featured = () => {
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src="/p1.jpeg" alt="" fill className={styles.image} />
+          <Image src="/mainfeature.png" alt="" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
-          <h1 className={styles.postTitle}>Lorem ipsum dolor sit amet alim consectetur adipisicing elit.</h1>
+          <h1 className={styles.postTitle} ><Link href="http://localhost:3000/posts/information-creationblog-hub">Information & Creation:(Blog Hub)</Link></h1>
           <p className={styles.postDesc}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Cupiditate, quam nisi magni ea laborum inventore voluptatum
-            laudantium repellat ducimus unde aspernatur fuga. Quo, accusantium
-            quisquam! Harum unde sit culpa debitis.
+            Used Front-End : Next.js/ React.js/
+
+            Used (Backend) : Node.js/ MongoDB/ Prisma-ORM/ Firebase/
+
+            Used (authentication) : Auth.js/ Google-Cloud/ Meta-developer/ GitHub developer/
+
+            Used Dependencies : "eslint, "eslint-config-next", "next": "13.4.19","next-auth", "react", "react-dom", "react-icons", "react-quill, prisma-adapter, prisma-client, firebase, swr.
           </p>
-          <button className={styles.button}>Read More</button>
+          <button className={styles.button}><Link href="http://localhost:3000/posts/information-creationblog-hub">Read More</Link></button>
         </div>
       </div>
     </div>

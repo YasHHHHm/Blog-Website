@@ -1,0 +1,372 @@
+Information & Creation:
+
+Used Front-End : Next.js/ React.js/
+Used (Backend) : Node.js/ MongoDB/ Prisma-ORM/ Firebase/
+Used (authentication) : Auth.js/ Google-Cloud/ Meta-developer/ GitHub developer/
+Used Dependencies : "eslint, "eslint-config-next", "next": "13.4.19","next-auth", "react", "react-dom", "react-icons", "react-quill, prisma-adapter, prisma-client,firebase, swr.
+
+
+
+
+
+--Inside Nav :-
+
+Added Some Social Links to Nav
+
+Added a login/logout functionality For authentication Purposes which detect whether or not the user is logged in and display the same.
+
+Adding a theme toggle button in the nav which works using "ThemeContextApi" in Next.js. It allows users to toggle between day and night mode.
+
+The toggle functionality uses both server-side data and client-side data to judge the current working theme in the display and sends and sends the following information to designated function block and activates the CSS for the theme which is to be displayed.
+
+Made navigation bar responsive for smaller devices by adding a separate navigation Menu.
+
+
+
+--Inside Homepage :-
+
+Added a featured Post on the top to showcase a jest of functionality and featured offered by my blog app.
+
+Added a section where all the categories on the page are visible in the form of cards, with separate CSS to each one. These are Clickable Components that takes you on the specified page where all the blogs for that specific genre are available.
+
+The Page also features a section for all of the recent/top featured, blogs posted by the user with its images. Mentioning the date of upload and the type of Blog (eg:- culture, fashion, coding or food blog. It redirects to a separate blog page where we can see individual blogs.
+
+Added A menu Bar on the right side of the homepage which gives a quick overview of all the sections in the blog page. It contains 3 sections:
+1st section: Shows the single top featured post for all the genres.
+2nd section: Shows the category cards for all genre.
+3rd section: Consists of Blogs featured/picked by the editor to be displayed separately.
+
+For last part of the Homepage, A pagination section has been added which allows the user to surf through multiple pages of the Blog Hub, It contains two button separated equally namely Previous Button to go to the prev page and a next button to go on the next page.
+
+
+
+--Single Blog Page :-
+
+A single Blog Page is a dedicated page for a blog written by the user.
+
+It shows the blog with its title, Its content and the Corresponding image to it. The page allows user to interact with the blog by starting a discussion through comments.
+
+A comment section is also added in the page which is connect to the backend database. It fetches the users comment and post it on the blog.
+
+The blog page is a responsive platform which is easy to use on all devices
+
+
+
+--Blog Writing Page :-
+
+This page is a "client side" platform which gives access to authenticated clients to write and post a blog.
+
+This Page uses components such as "React-Quill" & "Quill-Bubble" from 'react' which allows user to effectively edit the content of the Blog.
+
+Starting from top, a Title section is available where user can add the title to its Blog. Following The title an Add File option is available which, on click, gives access to the user to add files like Videos and Images, etc to add to the blog. Finally, the content writing section which also consists quill=-bubble, when selected a text it appears on the screen allowing user to make the text Bold, Italic, change Font & add comments to the content.
+
+Publish button on the top right corner is used to publish the Blog to the site(Blog Hub).
+
+Key Features:
+- Real-time Comments: The use of SWR ensures that new comments are fetched without reloading the page after submission.
+- Authentication: Users need to be logged in to post a comment. This is enforced both on the front end (by showing different UI) and on the backend (checking the session in the API route).
+- Error Handling: Errors are handled in both the front end (through "fetcher") and back end (through error responses in the API route).
+
+
+
+--User Login Page :-
+
+(Front-end Aspect)
+The Login Page is a user-based where the user can login to the blog website to access features such as writing a blog and writing a comment.
+
+It uses "client-side" data to detect if the user is logged in with the help of {Use-session} and {Use-State} from "Next-Auth" library.
+
+User can log-in using GitHub Account, Google Account and Facebook Account to access user-exclusive features in the blog website for which Auth.js is used for Backend Integration
+
+(Back-end Aspect)
+To access authenticated features the website asks for the user to log in:
+Here, to log in as a google account, Google Cloud services are used where the user is sent to a google login page using the path "website/api/auth/callback/google" and once the user completes the login the status is changed to authenticated allowing him to access more features.
+
+The data of the user is saved on MongoDB. It consist of all the session data, from users access token to its email, its id etc. To do this PRISMA ORM is used, to create database schema and make crud operations on it.
+
+
+
+--Footer :-
+
+It displays is the Final section of the page which concludes all the features, links and description of the Blog Hub Website.
+It's consist of a Logo for the Page with its title, showcasing a description of the Blog-Page. 
+
+Finally, All the Links, Social Links, and Category Links are added in a column format with extra hover effects to make it visually appealing to the user. This section eases the users time at the website helping the user to navigate quickly in between sections, and other pages. 
+
+
+
+--Model Used:
+
+Model Descriptions:
+
+1. Account Model:
+The Account model manages external authentication providers and stores authentication details.
+
+- id: Primary key, generated with "cuid()" and mapped to "_id" in MongoDB.
+- userId: References the "User" model.
+- type, provider, providerAccountId: Store provider-specific details (e.g., "google", "facebook").
+- refresh_token, access_token, expires_at, token_type, scope, id_token, session_state: OAuth-specific fields for managing tokens and session details.
+
+Relationships:
+- Linked to the "User" model via the "userId" field, with cascading deletes.
+- Unique constraint on "provider" and "providerAccountId".
+
+
+ 2. Session Model:
+The "Session" model manages user sessions.
+
+- id: Primary key, "cuid()", mapped to "_id" in MongoDB.
+- sessionToken: Unique session identifier.
+- userId: Links the session to a specific user (references the "User" model).
+- expires: Expiration timestamp.
+
+Relationships:
+- Linked to "User" via "userId", with cascading deletes.
+- Unique constraint on "sessionToken".
+
+
+ 3. User Model:
+The "User" model represents core user information.
+
+- id: Primary key, "cuid()", mapped to "_id".
+- email, emailVerified, name, image**: Store user information such as email, verification status, name, and profile image.
+
+Relationships:
+- Connected to "Account" and "Session" models. 
+- Users may have multiple accounts and sessions.
+
+
+ 4. Category Model:
+The "Category" model organizes content into different topics.
+
+- id: Primary key, "cuid()".
+- name: String field representing the category name (e.g., "Technology", "Science").
+
+Relationships:
+- Can be associated with multiple posts.
+
+
+ 5. Post Model:
+The "Post" model represents individual user-generated posts or articles.
+
+- id: Primary key, "cuid()".
+- title: A string for the title of the post.
+- content: Text content for the body of the post.
+- published: A boolean indicating if the post is published or a draft.
+- authorId: References the "User" model to link posts to an author.
+- categoryId: References the "Category" model to classify the post.
+
+Relationships:
+- Linked to a "User" (the author) via "authorId".
+- Linked to a "Category" via "categoryId".
+- Can have multiple comments linked through the "Comment" model.
+
+
+ 6. Comment Model
+The "Comment" model stores user comments on posts.
+
+- id: Primary key, "cuid()".
+- postId: References the "Post" model to associate the comment with a specific post.
+- authorId: References the "User" model to associate the comment with a specific user.
+- content: The text of the comment.
+- createdAt: A timestamp for when the comment was created.
+
+Relationships:
+- Linked to "Post" via "postId".
+- Linked to "User" (the comment’s author) via "authorId".
+
+
+
+
+--Backend Working:
+
+
+> Showing Posts:-
+
+For my website i have used a set of API routes to handle posts, including fetching, creating, and updating posts. Here’s a summary of the functionality based on the code:
+
+1. Fetching a Single Post(GET method):
+   - The request retrieves a post by its "slug" and increments its view count.
+   - It uses "Prisma" ORM to interact with the database. The query looks for the post by the "slug" and includes the related user data.
+   - If the operation is successful, the post is returned as a JSON response with a status code of 200. If an error occurs, it returns a 500 error with a message indicating something went wrong【6†source】.
+
+2. Fetching Multiple Posts with Pagination("GET" method):
+   - This method fetches posts with pagination and optional category filtering (catSlug).
+   - The request URL can include query parameters for "page" and "cat". Posts are fetched with a limit of 4 posts per page, and the query can be filtered by a category.
+   - A transaction is used to get both the posts and the total count of posts matching the query. The result is returned as JSON with the posts and the count.
+   - Error handling includes logging the error and returning a 500 error【7†source】.
+
+3. Creating a Post(POST method):
+   - The session is checked to ensure the user is authenticated before allowing post creation.
+   - If authenticated, the request body is parsed to extract post data, which is saved to the database.
+   - The created post is then returned as a response, or a 500 error is sent if there’s an issue during creation【7†source】.
+
+This setup provides an efficient way to manage posts on your website, with Prisma handling database interactions and Next.js’s API routes managing requests.
+
+
+
+> Writing and Seeing comments-
+
+Your code implements a comment system in a **Next.js** web application, using **React** for the front end, **NextAuth.js** for authentication, **Prisma** for database ORM, and the **Next.js API routes** for backend logic.
+
+Here's a breakdown of how the commenting system works:
+
+(Front-End)
+1. Fetching Comments:
+   - useSWR hook is used to fetch comments for a specific post using the "postSlug" (a unique identifier for each post).
+   - useSWR provides features like caching and real-time updates. The data is fetched from the API route at "/api/comments?postSlug=${postSlug}".
+   - The "fetcher" function fetches the comments from the API and converts them to JSON format. If the request fails (non-200 status), it throws an error.
+
+2. Authenticated User:
+   - The "useSession" hook from NextAuth.js checks if the user is authenticated.
+   - If the user is authenticated (status === "authenticated"), a text area and a submit button are shown to allow the user to write and submit a comment.
+   - If the user is not authenticated, a link to the login page (/login) is displayed instead.
+
+3. Submitting a Comment:
+   - The handleSubmit function is triggered when the user clicks the "Send" button. It sends a "POST" request to the "/api/comments" route with the comment data ("desc" and "postSlug").
+   - After submitting the comment, the "mutate" function from SWR is called to re-fetch the updated comments, ensuring that the new comment is displayed without reloading the page.
+
+4. Rendering Comments:
+   - The fetched comments ("data") are displayed by mapping over the array and rendering each comment.
+   - For each comment, the user's profile image, name, and comment creation date are shown.
+   - The comment's description is also displayed below the user's information.
+
+(Back-end)
+1. GET Request (Fetching Comments):
+   - The GET method retrieves all comments associated with a specific post (based on the "postSlug" query parameter).
+   - prisma.comment.findMany is used to query the database, filtering comments by the "postSlug" (if provided).
+   - Each comment includes the related user data (through the "include: { user: true }" option).
+   - The comments are then returned as a JSON response.
+
+2. POST Request (Creating a Comment):
+   - The POST method is used to create a new comment.
+   - It first checks if the user is authenticated by calling "getAuthSession" from NextAuth.js.
+   - If the user is not authenticated, a 401 error response ("Not Authenticated!") is returned.
+   - If authenticated, the request body (which contains the "desc" and "postSlug") is parsed, and the user's email (from the session) is added to the comment data.
+   - The comment is saved to the database using "prisma.comment.create()", and the new comment is returned as a JSON response.
+
+
+
+
+> Blog Writing:-
+
+1. Creating a Post:
+
+- Users must be authenticated to create a blog post.The post data is sent via a POST request to the backend, and if successful, it's stored in the database along with the user's email.
+  Authentication Check: - The "getAuthSession()" function is called to retrieve the current user's session.
+                        - If no session is found (i.e., the user is not authenticated), a "401 Unauthorized" response is returned.
+
+- Receiving Blog Data: If the user is authenticated, the backend expects a request with JSON data "const body = await req.json()", which contains the details of the blog post (e.g., title, content, category, etc.).
+
+- Creating the Post: - The Prisma ORM "prisma.post.create()" is used to create a new blog post in the database.
+                     - The post data is combined with the authenticated user's email "session.user.email", so the post is tied to the correct user.
+
+- Response Handling: - If the post creation is successful, a "200 OK" response is sent with the newly created post data.
+                     - If there's any error, a "500 Internal Server Error" response is returned, along with an error message.
+
+
+2. Fetching Posts: 
+
+Posts can be fetched with pagination, and optionally filtered by category. The backend ensures efficient querying and provides the total number of posts along with the paginated results.
+
+- Pagination: - The method fetches the "page" and "cat" (category) from the URL query parameters. The number of posts per page is set to 4 (POST_PER_PAGE).
+              - Using the "page" value, it calculates how many posts to skip ("skip: POST_PER_PAGE * (page - 1)") to implement pagination.
+              - If a category (cat) is specified, the posts are filtered based on that category (catSlug).
+
+- Query and Transaction: - The "prisma.$transaction" function is used to simultaneously fetch both the posts and the total post count for the category (or all posts if no category is    provided). This ensures both queries are executed in a single transaction, optimizing performance.
+                        
+
+- Response: - If the query succeeds, the server returns the posts and the total count in a "200 OK" response.
+            - If something goes wrong, a "500 Internal Server Error" response is returned.
+
+
+3. Firebase Integration:
+
+Firebase is set up to handle essential backend services like authentication, storage, and potentially more, depending on how Firebase is integrated across your application.
+
+- Firebase Setup: - Firebase is initialized using the "initializeApp" function and the provided "firebaseConfig".
+                  - The configuration includes essential details like the Firebase project's API key, auth domain, project ID, and more.
+                  - By exporting "app", the Firebase instance is available throughout the application.
+
+- Use of Firebase: -Firebase is used for features like, storing files (like images) or other data related to the blog.
+
+
+
+--Login Functionality :-
+
+This is a break down of how the login functionality works on my site.*.
+
+1. Login Page: This is the user interface component for logging in, which is built using Next.js with NextAuth for authentication. Here's how it functions:
+
+- useSession(): This hook from NextAuth is used to access session data and the session's loading/authenticated status. It tracks whether a user is logged in or in the process of logging in.
+
+  - status === "loading": While the session is being loaded, a "Loading..." message is displayed to the user.
+  
+  - status === "authenticated": If the user is authenticated, the page redirects to the homepage (router.push("/")).
+
+- Sign-In Buttons: There are buttons for signing in via Google, GitHub, and Facebook. Each button triggers the signIn() function, which is provided by Next-Auth. Based on the provider (Google, GitHub, or Facebook), this function initiates the OAuth flow for authentication.
+
+2. Auth.js file: This file configures authentication options using NextAuth and Prisma as the database adapter:
+
+- PrismaAdapter: This adapter allows NextAuth to store session, user, and account information in your Prisma database.
+
+- Providers: Three providers are set up here—Google, GitHub, and Facebook. Each provider requires a "clientId" and "clientSecret", which are set up in environment variables (e.g., "process.env.GOOGLE_ID" and "process.env.GOOGLE_SECRET"). These credentials allow Next-Auth to communicate with the respective OAuth APIs for authentication.
+
+- getAuthSession(): This function returns the session details on the server side by calling "getServerSession()", which is a Next-Auth utility that retrieves session data using the configuration defined in "authOptions".
+
+3. Connect.js file: This file manages the Prisma client, which is used to interact with your database. It ensures there is a single instance of the Prisma client throughout your application, preventing multiple connections to the database:
+
+- Prisma-Client: The "PrismaClient" object is responsible for making queries to your database (e.g., saving session or user information).
+
+- Singleton Pattern: It implements a singleton pattern, which means it only creates one instance of the "PrismaClient" and reuses it across your application. This is important for performance and stability, particularly in a server environment like Next.js.
+
+- In development (process.env.NODE_ENV !== 'production'), it ensures that Prisma's global instance is not recreated unnecessarily
+
+
+
+
+-- Important Terms/ Tools to know about :-
+
+1> Prisma -
+It is an open-source next-generation Object-Relational Mapping (ORM) tool designed for Node.js and TypeScript applications. It simplifies database interactions by providing type-safe database queries, making it easier for developers to work with databases.
+
+Why Prisma is Used ?
+
+- Type Safety : Prisma generates TypeScript types based on the database schema, which helps catch errors at compile time instead of runtime. This reduces bugs and improves developer productivity.
+   
+- Auto-generated Queries : Prisma generates queries automatically based on the schema, so developers don’t have to write SQL manually. This increases efficiency and reduces errors.
+   
+- Database Agnosticism : Prisma supports multiple databases, including PostgreSQL, MySQL, SQLite, and SQL Server. This makes it easier to switch between different databases without changing the application code significantly.
+   
+- Migrations : Prisma provides an intuitive way to manage database migrations, allowing developers to make schema changes in a controlled manner.
+   
+- Developer Experience : Prisma’s developer experience is highly regarded because it provides excellent documentation, CLI tools, and visual tools like Prisma Studio for managing databases.
+
+- Performance : Prisma is optimized to run efficient queries, making it suitable for production-level applications.
+
+How Prisma is Used ?
+
+- For Installation : Prisma is installed via Node Package Manager in a Node.js project:
+   using,
+   npm install @prisma/client
+   npx prisma init
+
+- Schema Definition : Prisma uses a schema file (typically named "schema.prisma") where you define your database models. This schema file maps to your database tables and columns.
+
+- Migrations : Once the schema is defined, Prisma allows you to generate migration files and apply them to the database:
+   using
+   npx prisma migrate dev
+
+- Database Queries : After setting up the schema, you can start querying the database using the Prisma Client, which is automatically generated based on the schema:
+   javascript code:
+   const { PrismaClient } = require('@prisma/client');
+   const prisma = new PrismaClient();
+
+   async function main() {
+     const users = await prisma.user.findMany();
+     console.log(users);
+   }
+
+   main();
+
+- API Integration : Prisma integrates seamlessly with REST and GraphQL APIs, making it a suitable choice for backend development in modern web applications.
