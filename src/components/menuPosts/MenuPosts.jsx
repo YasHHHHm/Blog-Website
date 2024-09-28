@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import styles from './menuposts.module.css';
+import styles from './menuPosts.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
