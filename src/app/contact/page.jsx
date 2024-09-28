@@ -57,7 +57,7 @@ const ContactPage = () => {
       <div className={styles.description}>
         <h1 className={styles.heading}><b>Reach out to us !</b></h1>
         <p className={styles.instructions}>
-          If you're experiencing any difficulties while using our platform, don't hesitate to reach out. Below are some common issues we can assist you with: <br />
+          If you are experiencing any difficulties while using our platform, do nott hesitate to reach out. Below are some common issues we can assist you with: <br />
           <br />
 
           Account & Functionality Issues: <br />
@@ -75,7 +75,7 @@ const ContactPage = () => {
           We take user experience seriously and are committed to ensuring a safe and smooth environment for all. Let us know how we can help resolve your issue.
           <br />
           <br />
-          Contact us today, and we'll get back to you promptly!
+          Contact us today, and we&apos;ll get back to you promptly!
           <br />
         </p>
       </div>
