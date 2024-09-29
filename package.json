@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "prisma generate",
     "dev": "next dev",
-    "build": "prisma generate && next build", 
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -21,9 +21,13 @@
     "next-auth": "^4.24.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-error-boundary": "^4.0.13",
     "react-icons": "^5.3.0",
     "react-quill": "^2.0.0",
     "remixicon": "^4.3.0",
+    "slate": "^0.103.0",
+    "slate-history": "^0.109.0",
+    "slate-react": "^0.110.1",
     "sweetalert2": "^11.14.1",
     "swr": "^2.2.5"
   },
