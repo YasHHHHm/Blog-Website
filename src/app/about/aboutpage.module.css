@@ -46,34 +46,39 @@
 
 @media screen and (max-width:1025px) {
 
-    .title{
-        font-size: 25px;
-    }
-    
-    .rightimg{
-        height:300px;
+    .imgContainer{
+        width: 100%;
+    }   
+     .img{
+        height:600px;
     }
 }
 @media screen and (max-width:756px){
-    .rightimg{
-        height: 200px;
+    .img{
+        height: 500px;
+    }
+    .description{
+        font-size: 18px;
     }
 }
 
 @media screen and (max-width:640px) {
-    .container{
-        flex-direction: column;
+    .title{
+        font-size: 30px;
     }
-    .rightimg{
-        height: 350px;
+    .img{
+        height: 400px;
+    }
+    .description{
+        font-size: 15px;
     }
     
 }
 
 @media screen and (max-width:455px) {
 
-    .rightimg{
-        height: 250px;
+    .img{
+        height: 300px;
     }
     
 }

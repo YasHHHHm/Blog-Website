@@ -46,7 +46,7 @@ const {status} = useSession();
             (<div className={styles.write}>
                 <textarea placeholder="write a comment..." className={styles.input} onChange={e=>setDesc(e.target.value)} />
                 <button className={styles.button} onClick={handleSubmit}>Send</button>
-            </div>) : (<Link href="/login">Login to write a comment</Link>)}
+            </div>) : (<Link href="/login"><u>Login to write a comment</u></Link>)}
 
 
 

@@ -14,18 +14,10 @@ const Featured = () => {
           <Image src="/mainfeature.png" alt="mainfeature" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
-          <h1 className={styles.postTitle} ><Link href="http://localhost:3000/posts/information-creationblog-hub">Information & Creation:(Blog Hub)</Link></h1>
-          <p className={styles.postDesc}>
-            Used Front-End : Next.js/ React.js/ <br />
-            <br />
-
-            Used (Backend) : Node.js/ MongoDB/ Prisma-ORM/ Firebase/ <br />
-            <br />
-            Used (authentication) : Auth.js/ Google-Cloud/ Meta-developer/ GitHub developer/
-
-
+          <h1 className={styles.postTitle} ><Link href="https://hub-blog.vercel.app/posts/information-creationblog-hub">Information & Creation:(Blog Hub)</Link></h1>
+          <p className={styles.postDesc}>An interactive blogging website where user can write, discover and discuss blogs. It offer various genres of topics for the user to choose from ranging from fashion, cultures and coding etc. 
           </p>
-          <button className={styles.button}><Link href="http://localhost:3000/posts/information-creationblog-hub">Read More</Link></button>
+          <button className={styles.button}><Link href="https://hub-blog.vercel.app/posts/information-creationblog-hub">Read More</Link></button>
         </div>
       </div>
     </div>

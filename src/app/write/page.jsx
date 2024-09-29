@@ -13,6 +13,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
+import dynamic from "next/dynamic";
 
 const WritePage = () => {
   const { status } = useSession();
@@ -79,7 +80,7 @@ const WritePage = () => {
 
   
   const handleSubmit = async () => {
-    const res = await fetch("/api/posts", {
+    const res = await fetch("https://hub-blog.vercel.app/api/posts", {
       method: "POST",
       body: JSON.stringify({
         title,

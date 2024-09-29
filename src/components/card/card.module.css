@@ -15,7 +15,7 @@
   .image {
     object-fit: cover;
   }
-  
+
   .textContainer {
     flex: 1;
     display: flex;
@@ -51,6 +51,55 @@
   
   @media screen and (max-width: 1280px) {
     .imageContainer {
+     height: 280px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .container{
+      background-color: var(--softBg);
+      border-radius: 8px;
+      margin: 6px;
+      margin-bottom: 50px;
+    }
+    .desc{
+      font-size: 15px;
+    }
+    .title{
+      font-size: 25px;
+    }
+  }
+
+  @media screen and (max-width:769px) {
+    .container{
+      gap: 25px;
+      margin-bottom: 15px;
+    }
+    .title{
+      font-size: 22px;
+    }
+    .desc{
+      font-size: 12px;
+    }
+    .imageContainer{
+      height: 300px;
+    }
+  }
+
+  @media screen and (max-width:640px) {
+    .textContainer{
+      margin: 10px;
+    }
+    .imageContainer{
       display: none;
+    }
+
+    .title{
+      font-size: 18px;
+      justify-content: center;
+      align-items: center;
+    }
+    .desc{
+      font-size: 15px;
     }
   }

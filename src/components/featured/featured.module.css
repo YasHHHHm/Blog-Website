@@ -57,21 +57,33 @@
     transition: 1s;
 }
 
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1281px) {
+
+    .imgContainer{
+        height: 380px;
+    }
 
     .title {
-        font-size: 72px;
+        font-size: 68px;
     }
 }
 
 @media screen and (max-width:1024px) {
 
-    .title {
-        font-size: 64px;
+    .post{
+        background-color: var(--softBg);
+        border-radius: 8px;
+        padding: 10px;
     }
 
-    .imgContainer{
-        display: none;
+    .post{
+        gap: 20px;
+    }
+    .title {
+        font-size: 60px;
+    }
+    .postDesc{
+        font-size: 16px;
     }
 }
 
@@ -79,9 +91,21 @@
     .title{
         font-size: 48px;
     }
+    .imgContainer{
+        height: 300px;
+    }
+    .postTitle{
+        font-size: 25px;
+    }
+    .button{
+        height: 50px;
+    }
 }
 
 @media screen and (max-width:640px) {
+    .imgContainer{
+        display: none;
+    }
     .title{
         font-size: 36px;
     }
