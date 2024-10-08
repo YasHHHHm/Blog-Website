@@ -17,7 +17,8 @@ import dynamic from "next/dynamic";
 import ReactQuill from "react-quill";
 
 const WritePage = () => {
-  const { status } = useSession();
+  const status = "authenticated";
+  // const { status } = useSession();
   const router = useRouter();
 
   const [open, setOpen] = useState(false);
