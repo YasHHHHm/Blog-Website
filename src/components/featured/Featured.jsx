@@ -11,11 +11,11 @@ const Featured = () => {
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src="/mainfeature.png" alt="mainfeature" fill className={styles.image} />
+          <Image src="/mainfeature.webp" alt="mainfeature" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
-          <h1 className={styles.postTitle} ><Link href="https://hub-blog.vercel.app/posts/information-creationblog-hub">Information & Creation:(Blog Hub)</Link></h1>
-          <p className={styles.postDesc}>An interactive blogging website where user can write, discover and discuss blogs. It offer various genres of topics for the user to choose from ranging from fashion, cultures and coding etc. 
+          <h1 className={styles.postTitle} ><Link href="https://hub-blog.vercel.app/posts/technology-and-culture">Technology and Culture</Link></h1>
+          <p className={styles.postDesc}>The effect of technology on culture is multifaceted, with both positive and negative consequences. Technology has transformed the ways in which people create, consume, and share cultural content, leading to new forms of artistic expression, communication, and interaction.
           </p>
           <button className={styles.button}><Link href="https://hub-blog.vercel.app/posts/information-creationblog-hub">Read More</Link></button>
         </div>

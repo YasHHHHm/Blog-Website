@@ -37,31 +37,31 @@
 }
 
 .categoryItem.style:hover {
-    background-color: rgb(186, 176, 176);
+    background-color: var(--stylehov);
     transition: 1s;
 }
 
 .categoryItem.fashion:hover {
-    background-color: rgb(186, 176, 176);
+    background-color: var(--fashionhov);
     transition: 1s;
 }
 
 .categoryItem.food:hover {
-    background-color: rgb(186, 176, 176);
+    background-color: var(--foodhov);
     transition: 1s;
 }
 
 .categoryItem.travel:hover {
-    background-color: rgb(186, 176, 176);
+    background-color: var(--travelhov);
     transition: 1s;
 }
 
 .categoryItem.culture:hover {
-    background-color: rgb(186, 176, 176);
+    background-color: var(--culturehov);
     transition: 1s;
 }
 
 .categoryItem.coding:hover {
-    background-color: rgb(186, 176, 176);
+    background-color: var(--codinghov);
     transition: 1s;
 }
