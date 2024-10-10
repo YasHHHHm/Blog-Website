@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import styles from './menuposts.module.css';
+import styles from './menuPosts.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,15 +9,17 @@ const getCategoryStyle = (categoryTitle) => {
     case 'travel':
       return styles.travel;
     case 'coding':
-      return styles.coding; 
+      return styles.coding;
     case 'fashion':
-      return styles.fashion; 
+      return styles.fashion;
     case 'food':
       return styles.food;
     case 'style':
       return styles.style;
+    case 'culture':
+      return styles.culture;
     default:
-      return ''; 
+      return '';
   }
 };
 

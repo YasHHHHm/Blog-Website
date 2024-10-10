@@ -15,7 +15,7 @@ const Footer = () => {
           <h1 className={styles.logoText}>Blog Hub</h1>
         </div>
         <p className={styles.desc}>
-          Blog Hub is an interactive blogging website where user can write, discover and discuss blogs. It offer various genres of topics for the user to choose from ranging from fashion, cultures and coding etc. Discover all new features of Bog Hub and don't fprget to write a blog ;) 
+          Blog Hub is an interactive blogging website where user can write, discover and discuss blogs. It offer various genres of topics for the user to choose from ranging from fashion, cultures and coding etc. Discover all new features of Blog Hub and don&apos;t forget to write a blog ;) 
         </p>
         <div className={styles.icon}>
         <a href="https://www.facebook.com/yash.mehra.1257/"> 

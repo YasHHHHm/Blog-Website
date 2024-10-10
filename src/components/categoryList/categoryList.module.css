@@ -94,3 +94,8 @@
         width: 100%;
     }
 }
+@media screen and (max-width:432px) {
+    .title{
+        font-size: 28px;
+    }
+}

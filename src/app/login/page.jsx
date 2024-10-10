@@ -7,7 +7,7 @@ import {FaFacebookF } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 import Facebook from "next-auth/providers/facebook";
 
-const page = () => {
+const Page = () => {
 
   const {data,status} = useSession()
 
@@ -24,12 +24,12 @@ const page = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.socialButton} onClick={()=>signIn("google")}> <Image src="/google.png" className={styles.logo} width={20} height={20} /> Sign in with Google</div>
-        <div className={styles.socialButton} onClick={()=>signIn("github")}><Image src="/github.png" className={styles.logo} width={20} height={20} /> Sign in with Github</div>
+        <div className={styles.socialButton} onClick={()=>signIn("google")}> <Image src="/google.png" alt="google" className={styles.logo} width={20} height={20} /> Sign in with Google</div>
+        <div className={styles.socialButton} onClick={()=>signIn("github")}><Image src="/github.png" alt="google" className={styles.logo} width={20} height={20} /> Sign in with Github</div>
         <div className={styles.socialButton} onClick={()=>signIn("facebook")}><FaFacebookF size={20} className={styles.logo} /> Sign in with Facebook</div>
       </div>
     </div>
   )
 }
 
-export default page
+export default Page;

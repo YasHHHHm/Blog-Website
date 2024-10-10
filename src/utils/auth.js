@@ -7,7 +7,7 @@ import { getServerSession } from "next-auth";
 
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
-  
+
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
@@ -18,10 +18,11 @@ export const authOptions = {
       clientSecret: process.env.GITHUB_SECRET,
     }),
     FacebookProvider({
-      clientId: process.env.FACEBOOK_ID,    
-      clientSecret: process.env.FACEBOOK_SECRET,  
+      clientId: process.env.FACEBOOK_ID,
+      clientSecret: process.env.FACEBOOK_SECRET,
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET, // This should now work correctly
 };
 
 export const getAuthSession = () => getServerSession(authOptions);
